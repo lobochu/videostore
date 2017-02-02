@@ -17,9 +17,8 @@ public class Customer {
     rentals.add(rental);
   }
 
-  public String generateStatement() {
-    final StatementGenerator statementGenerator = new StatementGenerator();
-    return statementGenerator.generate(name, rentals, new PricePlan());
+  public String generateStatement(StatementGenerator generator) {
+    return generator.generate(name, rentals, new PricePlan());
   }
 
 
