@@ -3,7 +3,7 @@ import org.junit.Test;
 
 public class VideoStoreTest {
 
-  private final Customer customer = new Customer("Fred");
+  private final Customer customer = new Customer("Fred", new PricePlan(new LoyaltyPlan(), new Tariff()));
 
   @Test
   public void testSingleNewReleaseStatement() {
@@ -13,7 +13,7 @@ public class VideoStoreTest {
   }
 
   private String generate() {
-    return customer.generateStatement(new Customer.StatementGenerator());
+    return customer.generateStatement(new StatementGenerator());
   }
 
   @Test
