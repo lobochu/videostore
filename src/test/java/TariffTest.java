@@ -24,6 +24,12 @@ public class TariffTest {
                 assertThat(new Tariff().calculatePrice(new Rental(new Movie("title", Movie.CHILDRENS), 5)), equalTo(4.5));
 
         }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void finding_out_what_happens() throws Exception {
+                new Tariff().calculatePrice(new Rental(new Movie("title", 999), 1));
+        }
+
         @Test
         public void new_release_pricing() throws Exception {
                 assertThat(new Tariff().calculatePrice(new Rental(new Movie("title", Movie.NEW_RELEASE), 1)), equalTo(3.0));
