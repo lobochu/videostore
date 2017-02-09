@@ -7,8 +7,9 @@ public class LoyaltyPlan {
     frequentRenterPoints++;
 
     if (rental.getMovie().getPriceCode() == Movie.NEW_RELEASE
-        && rental.getDaysRented() > 1)
+        && rental.getDaysRented() > 1) {
       frequentRenterPoints++;
+    }
     return frequentRenterPoints;
   }
 }
